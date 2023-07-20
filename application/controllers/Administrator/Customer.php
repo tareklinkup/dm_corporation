@@ -59,7 +59,7 @@ class Customer extends CI_Controller
             and c.Customer_Type != 'G'
             and (c.Customer_brunchid = ? or c.Customer_brunchid = 0)
             $customerTypeClause
-            order by c.Customer_SlNo desc
+            order by c.Customer_Name asc
         ", $this->session->userdata('BRANCHid'))->result();
         echo json_encode($customers);
     }
